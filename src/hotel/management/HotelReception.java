@@ -41,9 +41,9 @@ public class HotelReception extends JFrame {
 		btnNewCustomerForm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-				CustomerDetails custom = new NewCustomerDetails();
+				CostomerDetails custom = new CostomerDetails();
 				custom.setVisible(true);
-                                setVisible(false);
+				setVisible(false);
 			}catch(Exception e1){
 				e1.printStackTrace();
 			}
@@ -122,7 +122,7 @@ public class HotelReception extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					//error ---------------------
-					CustomerInfo customer = new CustomerInfo();
+					CostomerDetails customer = new CostomerDetails();
 					customer.setVisible(true);				
 					setVisible(false);
 				}

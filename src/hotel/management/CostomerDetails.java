@@ -53,7 +53,7 @@ public class CostomerDetails extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/Image4.jpg"));
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image4.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(300, 400,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);

@@ -32,7 +32,7 @@ public class HotelManagement extends JFrame implements ActionListener{
 				
                 
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/Image1.jpg"));
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/first.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(1366, 390,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 l1 = new JLabel(i2);

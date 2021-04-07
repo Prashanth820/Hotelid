@@ -27,7 +27,7 @@ public class Dashboard extends JFrame{
         setLayout(null); 
 
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/Image5.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image5.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1950, 1000,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2); 
 	JLabel NewLabel = new JLabel(i3);

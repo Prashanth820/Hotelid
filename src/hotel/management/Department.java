@@ -9,6 +9,20 @@ package hotel.management;
  *
  * @author 2206p
  */
-public class Department {
+import java.awt.BorderLayout;
+import java.awt.*;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+//import net.proteanit.sql.DbUtils;
+
+import javax.swing.JTable;
+import java.sql.*;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+public class Department extends JFrame{
     
 }
