@@ -7,7 +7,7 @@ package hotel.management;
 
 /**
  *
- * @author 2206p
+ * @author Pratiksha
  */
 import java.awt.*;
 import javax.swing.*;
@@ -20,31 +20,31 @@ public class HotelManagement extends JFrame implements ActionListener{
         
         public HotelManagement() {
 		
-                setSize(1366,430);          // setContentPane(300,300,1366,390);   frame size
+                setSize(1366,750);          // setContentPane(300,300,1366,390);   frame size
                 setLayout(null);
-                setLocation(300,300);
+                setLocation(0,0);
 
 		l1 = new JLabel("");
-                b1 = new JButton("Next");
+                b1 = new JButton("Click Next");
                 
-                b1.setBackground(Color.WHITE);
-                b1.setForeground(Color.BLACK);
+                b1.setBackground(Color.black);
+                b1.setForeground(Color.white);
 				
                 
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/first.jpg"));
-                Image i3 = i1.getImage().getScaledInstance(1366, 390,Image.SCALE_DEFAULT);
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/second.jpg"));
+                Image i3 = i1.getImage().getScaledInstance(1366, 750,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 l1 = new JLabel(i2);
                 
                 JLabel lid=new JLabel("HOTEL MANAGEMENT SYSTEM");
-                lid.setBounds(30,300,1500,100);
-                lid.setFont(new Font("serif",Font.PLAIN,70));
+                lid.setBounds(80,300,1500,500);
+                lid.setFont(new Font("Ta",Font.PLAIN,70));
                 lid.setForeground(Color.red);
                 l1.add(lid);
                 
-                b1.setBounds(1170,325,150,50);
-		l1.setBounds(0, 0, 1366, 390);
+                b1.setBounds(1100,600,100,50);
+		        l1.setBounds(0, 0, 1366, 750);
                 
                 l1.add(b1);
 		add(l1);

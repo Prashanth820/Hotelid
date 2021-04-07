@@ -15,265 +15,211 @@ import java.sql.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class HotelReception extends JFrame {
+public class HotelReception extends JFrame  implements ActionListener{
 
-	private JPanel contentPane;
+          JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12;
 
-	public static void main(String[] args) {
-		new HotelReception();
-	}
-	
-	public void Reception(){
-		
-                setBounds(530, 200, 850, 570);
-		contentPane = new JPanel();
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-                
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/fourth.jpg"));
-                Image i3 = i1.getImage().getScaledInstance(500, 500,Image.SCALE_DEFAULT);
-                ImageIcon i2 = new ImageIcon(i3);
-                JLabel l1 = new JLabel(i2);
-                l1.setBounds(250,30,500,470);
-                add(l1);
-		
-		JButton btnNewCustomerForm = new JButton("New Customer Form");
-		btnNewCustomerForm.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-				CostomerDetails custom = new CostomerDetails();
-				custom.setVisible(true);
-				setVisible(false);
-			}catch(Exception e1){
-				e1.printStackTrace();
-			}
-			}
-		});
-		btnNewCustomerForm.setBounds(10, 30, 200, 30);
-                btnNewCustomerForm.setBackground(Color.BLACK);
-                btnNewCustomerForm.setForeground(Color.WHITE);
-		contentPane.add(btnNewCustomerForm);
-		
-		JButton btnNewButton = new JButton("Room");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try{
-				Room room = new Room();
-				room.setVisible(true);
-                                setVisible(false);
-				}
-				catch(Exception e){
-					e.printStackTrace();
-				}
-				
-			}
-		});
-		btnNewButton.setBounds(10, 70, 200, 30);
-                btnNewButton.setBackground(Color.BLACK);
-                btnNewButton.setForeground(Color.WHITE);
 
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Department");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-					Department dept = new Department();
-					dept.setVisible(true);
-					setVisible(false);
-					
-				}
-				catch (Exception e1){
-					e1.printStackTrace();
-				}
-			
-			}
-		});
-		btnNewButton_1.setBounds(10, 110, 200, 30);
-                btnNewButton_1.setBackground(Color.BLACK);
-                btnNewButton_1.setForeground(Color.WHITE);
+          HotelReception(){
 
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("All Employee Info");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-				
-					Employee em = new Employee();
-					em.setVisible(true);
-					setVisible(false);
-					
-				}
-				catch (Exception e1){
-					e1.printStackTrace();
-				}
-			
-			}
-		});
-		btnNewButton_2.setBounds(10, 150, 200, 30);                
-                btnNewButton_2.setBackground(Color.BLACK);
-                btnNewButton_2.setForeground(Color.WHITE);
+          	b1=new JButton("New Customer Form");
+          	b1.setBackground(Color.BLACK);
+          	b1.setForeground(Color.WHITE);
+          	b1.setBounds(10,30,200,30);
+          	b1.addActionListener(this);
+          	add(b1);
 
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Customer Info");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-					//error ---------------------
-					CostomerDetails customer = new CostomerDetails();
-					customer.setVisible(true);				
-					setVisible(false);
-				}
-				catch (Exception e1){
-					e1.printStackTrace();
-				}
-			}
-		});
-		btnNewButton_3.setBounds(10, 190, 200, 30);
-                btnNewButton_3.setBackground(Color.BLACK);
-                btnNewButton_3.setForeground(Color.WHITE);
+			  b2=new JButton("Room");
+			  b2.setBackground(Color.BLACK);
+			  b2.setForeground(Color.WHITE);
+			  b2.setBounds(10,70,200,30);
+			  b2.addActionListener(this);
+			  add(b2);
 
-		contentPane.add(btnNewButton_3);
-		
-		JButton btnManagerInfo = new JButton("Manager Info");
-		btnManagerInfo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-				ManagerInfo mana = new ManagerInfo();
-				mana.setVisible(true);
-                                setVisible(false);
-				}
-				catch (Exception e1){
-					e1.printStackTrace();
-				}
-			}
-		});
-		btnManagerInfo.setBounds(10, 230, 200, 30);
-                btnManagerInfo.setBackground(Color.BLACK);
-                btnManagerInfo.setForeground(Color.WHITE);
+			  b3=new JButton("Department");
+			  b3.setBackground(Color.BLACK);
+			  b3.setForeground(Color.WHITE);
+			  b3.setBounds(10,110,200,30);
+			  b3.addActionListener(this);
+			  add(b3);
 
-		contentPane.add(btnManagerInfo);
-		
-		JButton btnNewButton_4 = new JButton("Check Out");
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CheckOut check;
+			  b4=new JButton("Employee Information");
+			  b4.setBackground(Color.BLACK);
+			  b4.setForeground(Color.WHITE);
+			  b4.setBounds(10,150,200,30);
+			  b4.addActionListener(this);
+			  add(b4);
+
+			  b5=new JButton("Customer Information");
+			  b5.setBackground(Color.BLACK);
+			  b5.setForeground(Color.WHITE);
+			  b5.setBounds(10,190,200,30);
+			  b5.addActionListener(this);
+			  add(b5);
+
+			  b6=new JButton("Manager Information");
+			  b6.setBackground(Color.BLACK);
+			  b6.setForeground(Color.WHITE);
+			  b6.setBounds(10,230,200,30);
+			  b6.addActionListener(this);
+			  add(b6);
+
+			  b7=new JButton("Check Out");
+			  b7.setBackground(Color.BLACK);
+			  b7.setForeground(Color.WHITE);
+			  b7.setBounds(10,270,200,30);
+			  b7.addActionListener(this);
+			  add(b7);
+
+			  b8=new JButton("Update Check Status");
+			  b8.setBackground(Color.BLACK);
+			  b8.setForeground(Color.WHITE);
+			  b8.setBounds(10,310,200,30);
+			  b8.addActionListener(this);
+			  add(b8);
+
+			  b9=new JButton("Update Room Status");
+			  b9.setBackground(Color.BLACK);
+			  b9.setForeground(Color.WHITE);
+			  b9.setBounds(10,350,200,30);
+			  b9.addActionListener(this);
+			  add(b9);
+
+			  b10=new JButton("Pickup Service");
+			  b10.setBackground(Color.BLACK);
+			  b10.setForeground(Color.WHITE);
+			  b10.setBounds(10,390,200,30);
+			  b10.addActionListener(this);
+			  add(b10);
+
+			  b11=new JButton("Search Room");
+			  b11.setBackground(Color.BLACK);
+			  b11.setForeground(Color.WHITE);
+			  b11.setBounds(10,430,200,30);
+			  b11.addActionListener(this);
+			  add(b11);
+
+			  b12=new JButton("Logout");
+			  b12.setBackground(Color.BLACK);
+			  b12.setForeground(Color.WHITE);
+			  b12.setBounds(10,470,200,30);
+			  b12.addActionListener(this);
+			  add(b12);
+
+			  ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/fourth.jpg"));
+			  Image i3 = i1.getImage().getScaledInstance(500, 500,Image.SCALE_DEFAULT);
+			  ImageIcon i2 = new ImageIcon(i3);
+			  JLabel image = new JLabel(i2);
+			  image.setBounds(250,10,500,500);
+			  add(image);
+
+
+			  setLayout(null);
+			  setBounds(200,200,800,580);
+			  setVisible(true);
+          }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== b1){
+			new AddGuest().setVisible(true);
+			this.setVisible(false);
+		}
+		else if(e.getSource()== b2){
+			if(e.getSource()==b2)
+			{
 				try {
-					check = new CheckOut();
-					check.setVisible(true);
-                                        setVisible(false);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					new Room().setVisible(true);
+				} catch (SQLException throwables) {
+					throwables.printStackTrace();
 				}
+				this.setVisible(false);
 			}
-		});
-		btnNewButton_4.setBounds(10, 270, 200, 30);
-                btnNewButton_4.setBackground(Color.BLACK);
-                btnNewButton_4.setForeground(Color.WHITE);
-
-		contentPane.add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("Update Check Status");
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-				UpdateCheck update = new UpdateCheck();
-				update.setVisible(true);
-                                setVisible(false);
-				}
-				catch(Exception e1){
-					e1.printStackTrace();
-				}
-			}
-		});
-		btnNewButton_5.setBounds(10, 310, 200, 30);
-                btnNewButton_5.setBackground(Color.BLACK);
-                btnNewButton_5.setForeground(Color.WHITE);
-
-		contentPane.add(btnNewButton_5);
-		
-		JButton btnNewButton_6 = new JButton("Update Room Status");
-		btnNewButton_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-					UpdateRoom room = new UpdateRoom();
-					room.setVisible(true);
-                                        setVisible(false);
-				}catch(Exception s)
-				{
-					s.printStackTrace();
-				}
-			}
-		});
-		btnNewButton_6.setBounds(10, 350, 200, 30);
-                btnNewButton_6.setBackground(Color.BLACK);
-                btnNewButton_6.setForeground(Color.WHITE);
-
-		contentPane.add(btnNewButton_6);
-		
-		JButton btnPickUpSerice = new JButton("Pick up Service");
-		btnPickUpSerice.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try{
-				PickUp pick = new PickUp();
-				pick.setVisible(true);
-                                setVisible(false);
-				}
-				catch(Exception e){
-					e.printStackTrace();
-				}
-			}
-		});
-		btnPickUpSerice.setBounds(10, 390, 200, 30);
-                btnPickUpSerice.setBackground(Color.BLACK);
-                btnPickUpSerice.setForeground(Color.WHITE);
-
-		contentPane.add(btnPickUpSerice);
-		
-		JButton btnSearchRoom = new JButton("Search Room");
-		btnSearchRoom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		}
+		else if(e.getSource()== b3){
+			if(e.getSource() ==b3){
 				try {
-				SearchRoom search = new SearchRoom();
-				search.setVisible(true);
-                                setVisible(false);
+					new Department().setVisible(true);
+				} catch (SQLException throwables) {
+					throwables.printStackTrace();
 				}
-				catch (Exception ss){
-					ss.printStackTrace();
-				}
+				this.setVisible(false);
 			}
-		});
-		btnSearchRoom.setBounds(10, 430, 200, 30);
-                btnSearchRoom.setBackground(Color.BLACK);
-                btnSearchRoom.setForeground(Color.WHITE);
 
-		contentPane.add(btnSearchRoom);
-
-		JButton btnNewButton_7 = new JButton("Log Out");
-		btnNewButton_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				try {
-                                    new Login().setVisible(true);
-                                    setVisible(false);
-                                    
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				
+		}
+		else if(e.getSource()== b4){
+			try {
+				new Employee().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
 			}
-		});
-		btnNewButton_7.setBounds(10, 470, 200, 30);
-                btnNewButton_7.setBackground(Color.BLACK);
-                btnNewButton_7.setForeground(Color.WHITE);
+			this.setVisible(false);
 
-		contentPane.add(btnNewButton_7);
-                getContentPane().setBackground(Color.WHITE);
-                
-                setVisible(true);
-	}
-    
-    
+		}
+		else if(e.getSource()== b5){
+
+		}
+		else if(e.getSource()== b6){
+			try {
+				new ManagerInfo().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+
+		}
+		else if(e.getSource()== b7){
+			try {
+				new CheckOut().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+
+		}
+		else if(e.getSource()== b8){
+			try {
+				new UpdateCheck().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+
+		}
+		else if(e.getSource()== b9){
+			try {
+				new UpdateRoom().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+
+		}
+		else if(e.getSource()== b10){
+			try {
+				new PickUp().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+
+		}
+		else if(e.getSource()== b11){
+			try {
+				new SearchRoom().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(false);
+		}
+		else if(e.getSource()== b12){
+			setVisible(false);
+
+		} }
+
+	public static void main(String[] args){
+          	new HotelReception().setVisible(true);
+		  }
 }
+
+

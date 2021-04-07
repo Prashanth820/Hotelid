@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.EventQueue;
 
 
-import java.sql.*;	
+import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -57,7 +57,7 @@ public class CheckOut extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/Image3.jpg"));
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image3.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(400, 225,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);
@@ -84,7 +84,7 @@ public class CheckOut extends JFrame{
                 c1.setBounds(130, 82, 150, 20);
 		contentPane.add(c1);
                 
-                ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/tick.png"));
+                ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/tick.png"));
                 Image i5 = i4.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
                 ImageIcon i6 = new ImageIcon(i5);
                 JButton l2 = new JButton(i6);

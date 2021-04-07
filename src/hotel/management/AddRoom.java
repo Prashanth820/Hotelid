@@ -37,10 +37,10 @@ public class AddRoom extends JFrame implements ActionListener{
         contentPane.setLayout(null);
 
         ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image6.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(500, 300,Image.SCALE_DEFAULT);
+        Image i3 = i1.getImage().getScaledInstance(500, 350,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l15 = new JLabel(i2);
-        l15.setBounds(400,30,500,370);
+        l15.setBounds(400,10,500,350);
         add(l15);
 
         JLabel l10 = new JLabel("Add Rooms");

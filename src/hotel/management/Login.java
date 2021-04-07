@@ -14,96 +14,117 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class Login extends JFrame implements ActionListener {
-    JLabel l1,l2;
-    JTextField t1;
-    JPasswordField t2;
-    JButton b1,b2;
+public class Login extends JFrame implements ActionListener{
 
-    Login(){
+    private JPanel panel;
+    private JTextField textField;
+    private JPasswordField passwordField;
+    private JButton b1,b2,b3;
+    JLabel l1;
 
-        super("Login");
 
-        setLayout(null);
+    public Login() {
 
-        l1 = new JLabel("Username");
-        l1.setBounds(40,20,100,30);
-        add(l1);
-        
-        l2 = new JLabel("Password");
-        l2.setBounds(40,70,100,30);
-        add(l2);
- 
-        t1=new JTextField();
-        t1.setBounds(150,20,150,30);
-        add(t1);
+        setBackground(new Color(169, 169, 169));
+        setBounds(0, 0, 1366, 750);
 
-        t2=new JPasswordField();
-        t2.setBounds(150,70,150,30);
-        add(t2);
-        
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image1.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
-        ImageIcon i3 =  new ImageIcon(i2);
-        JLabel l3 = new JLabel(i3);
-        l3.setBounds(350,10,150,150);
-        add(l3);
+        panel = new JPanel();
+        panel.setBackground(new Color(176, 224, 230));
+        setContentPane(panel);
+        panel.setLayout(null);
 
+
+
+
+        JLabel l1 = new JLabel("Username : ");
+        l1.setBounds(440, 150, 120, 50);
+        l1.setForeground(Color.white);
+        panel.add(l1);
+
+        JLabel l2 = new JLabel("Password : ");
+        l2.setBounds(440, 200, 120, 50);
+        l2.setForeground(Color.white);
+        panel.add(l2);
+
+        textField = new JTextField();
+        textField.setBounds(600, 150, 190, 30);
+        panel.add(textField);
+
+        passwordField = new JPasswordField();
+        passwordField.setBounds(600, 200, 190, 30);
+        panel.add(passwordField);
+
+        JLabel l3 = new JLabel("");
+        l3.setBounds(377, 79, 46, 34);
+        panel.add(l3);
+
+        JLabel l4 = new JLabel("");
+        l4.setBounds(377, 124, 46, 34);
+        panel.add(l3);
 
         b1 = new JButton("Login");
-        b1.setBounds(40,140,120,30);
-        b1.setFont(new Font("serif",Font.BOLD,15));
         b1.addActionListener(this);
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
-        add(b1);
 
-        b2=new JButton("Cancel");
-        b2.setBounds(180,140,120,30);
-        b2.setFont(new Font("serif",Font.BOLD,15));
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
-        add(b2);
+        b1.setForeground(new Color(46, 139, 87));
+        b1.setBackground(Color.white);
+        b1.setBounds(400, 280, 190, 39);
+        panel.add(b1);
 
+        b2 = new JButton("Create Account");
         b2.addActionListener(this);
-        
-        
-        getContentPane().setBackground(Color.WHITE);
 
-        setVisible(true);
-        setSize(600,300);
-        setLocation(600,350);
+        b2.setForeground(new Color(139, 69, 19));
+        b2.setBackground(Color.white);
+        b2.setBounds(650, 280, 190, 39);
+        panel.add(b2);
 
+
+
+        JPanel panel2 = new JPanel();
+        panel2.setBackground(new Color(176, 224, 230));
+        panel2.setBounds(0, 0, 1366, 750);
+        panel.add(panel2);
+
+        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/black.jpg"));
+        Image i3 = i1.getImage().getScaledInstance(1366, 750,Image.SCALE_DEFAULT);
+        ImageIcon i2 = new ImageIcon(i3);
+        l1 = new JLabel(i2);
+        panel2.add(l1);
     }
 
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource()==b1){
-        try{
-            conn c1 = new conn();
-            String u = t1.getText();
-            String v = t2.getText();
-            
-            String q = "select * from login where username='"+u+"' and password='"+v+"'";
-            
-            ResultSet rs = c1.s.executeQuery(q); 
-            if(rs.next()){
-                Dashboard d=new Dashboard();
-                d.setVisible(true);
-                setVisible(false);
-            }else{
-                JOptionPane.showMessageDialog(null, "Invalid login");
-                setVisible(false);
+        if(ae.getSource() == b1){
+            Boolean status = false;
+            try {
+                conn con = new conn();
+                String sql = "select * from account where username=? and password=?";
+                PreparedStatement st = con.c.prepareStatement(sql);
+
+                st.setString(1, textField.getText());
+                st.setString(2, passwordField.getText());
+
+                ResultSet rs = st.executeQuery();
+                if (rs.next()) {
+                    this.setVisible(false);
+                    new Dashboard().setVisible(true);
+                } else
+                    JOptionPane.showMessageDialog(null, "Invalid Login...!.");
+
+            } catch (Exception e2) {
+                e2.printStackTrace();
             }
-        }catch(Exception e){
-            e.printStackTrace();
         }
-        }else if(ae.getSource()==b2){
-            System.exit(0);
+        if(ae.getSource() == b2){
+            setVisible(false);
+            Signup su = new Signup();
+            su.setVisible(true);
         }
+
     }
-    public static void main(String[] arg){
-        new Login();
+
+    public static void main(String[] args) {
+        new Login().setVisible(true);
     }
+
 }
- 
 

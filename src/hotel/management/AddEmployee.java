@@ -131,11 +131,11 @@ public class AddEmployee extends JFrame{ //Third Frame
         add(AddPassengers);
 
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image3.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(500, 500,Image.SCALE_DEFAULT);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/employee1.jpg"));
+        Image i3 = i1.getImage().getScaledInstance(500, 350,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel image = new JLabel(i2);
-        image.setBounds(410,80,480,410);
+        image.setBounds(410,80,500,350);
         add(image);
 
 
@@ -181,6 +181,7 @@ public class AddEmployee extends JFrame{ //Third Frame
     }
 
     public static void main(String[] args){
+
         new AddEmployee();
     }
 }
