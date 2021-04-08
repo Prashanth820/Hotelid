@@ -157,6 +157,12 @@ public class HotelReception extends JFrame  implements ActionListener{
 
 		}
 		else if(e.getSource()== b5){
+			try {
+				new CustomerInfo().setVisible(true);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
+			this.setVisible(true);
 
 		}
 		else if(e.getSource()== b6){
