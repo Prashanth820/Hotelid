@@ -12,14 +12,14 @@ public class UserWelcomePage extends JFrame  implements ActionListener {
 
     UserWelcomePage() {
 
-        JLabel l1 = new JLabel("WELCOME TO TAJ HOTEL");
-        l1.setBounds(450, 40, 500, 50);
+        JLabel l1 = new JLabel("WELCOME ");
+        l1.setBounds(520, 40, 500, 50);
         l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Tahoma", Font.PLAIN, 40));
         add(l1);
 
         JLabel l2 = new JLabel("Experience The Best Customer Service In a Hotel");
-        l2.setBounds(400, 200, 700, 40);
+        l2.setBounds(350, 170, 700, 40);
         l2.setForeground(Color.WHITE);
         l2.setFont(new Font("Tahoma", Font.PLAIN, 30));
         add(l2);
@@ -27,19 +27,19 @@ public class UserWelcomePage extends JFrame  implements ActionListener {
         b1 = new JButton("Check Room Availability");
         b1.setBackground(Color.BLACK);
         b1.setForeground(Color.WHITE);
-        b1.setBounds(400, 350, 220, 40);
+        b1.setBounds(370, 350, 220, 40);
         b1.addActionListener(this);
         add(b1);
 
         b2 = new JButton("Book Room");
         b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
-        b2.setBounds(800, 350, 220, 40);
+        b2.setBounds(750, 350, 220, 40);
         b2.addActionListener(this);
         add(b2);
 
 
-        ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/first.jpg"));
+        ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/black.jpg"));
         Image i11 = i10.getImage().getScaledInstance(1366, 750, Image.SCALE_DEFAULT);
         ImageIcon i12 = new ImageIcon(i11);
         JLabel l12 = new JLabel(i12);

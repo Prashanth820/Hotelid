@@ -51,17 +51,17 @@ public class CheckOut extends JFrame{
 	public CheckOut() throws SQLException {
 		//conn = Javaconnect.getDBConnection();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(530, 200, 800, 294);
+		setBounds(300, 130, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
                 ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image3.jpg"));
-                Image i3 = i1.getImage().getScaledInstance(400, 225,Image.SCALE_DEFAULT);
+                Image i3 = i1.getImage().getScaledInstance(400, 380,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);
-                l1.setBounds(300,0,500,225);
+                l1.setBounds(390,10,400,380);
                 add(l1);
 		
 		JLabel lblCheckOut = new JLabel("Check Out ");

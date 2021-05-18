@@ -59,7 +59,7 @@ public class ManagerInfo extends JFrame{
     public ManagerInfo() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(430, 200, 1000, 600);
+        setBounds(290, 120, 1000, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

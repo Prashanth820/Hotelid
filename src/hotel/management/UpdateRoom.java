@@ -58,17 +58,17 @@ public class UpdateRoom extends JFrame {
     public UpdateRoom() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(530, 200, 1000, 450);
+        setBounds(280, 120, 1000, 550);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image2.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(550, 250,Image.SCALE_DEFAULT);
+        Image i3 = i1.getImage().getScaledInstance(550, 400,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l1 = new JLabel(i2);
-        l1.setBounds(400,80,600,250);
+        l1.setBounds(400,50,550,400);
         add(l1);
 
         JLabel lblUpdateRoomStatus = new JLabel("Update Room Status");
@@ -83,7 +83,7 @@ public class UpdateRoom extends JFrame {
         c1 = new Choice();
         try{
             conn c = new conn();
-            ResultSet rs = c.s.executeQuery("select * from customer");
+            ResultSet rs = c.s.executeQuery("select * from roombooks");
             while(rs.next()){
                 c1.add(rs.getString("number"));
             }
@@ -121,7 +121,7 @@ public class UpdateRoom extends JFrame {
                 try{
                     String s1 = c1.getSelectedItem();
                     conn c = new conn();
-                    ResultSet rs1 = c.s.executeQuery("select * from customer where number = "+s1);
+                    ResultSet rs1 = c.s.executeQuery("select * from roombooks where number = "+s1);
 
                     while(rs1.next()){
                         txt_Room.setText(rs1.getString("room_number"));

@@ -31,7 +31,7 @@ public class AddDrivers extends JFrame implements ActionListener{
 
 
     public AddDrivers() {
-        setBounds(450, 200, 1000, 500);
+        setBounds(300, 90, 1000, 600);
         contentPane = new JPanel();
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -42,7 +42,7 @@ public class AddDrivers extends JFrame implements ActionListener{
         Image i3 = i1.getImage().getScaledInstance(500, 350,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l15 = new JLabel(i2);
-        l15.setBounds(400,30,500,350);
+        l15.setBounds(400,30,500,400);
         add(l15);
 
         JLabel l10 = new JLabel("Add Drivers");

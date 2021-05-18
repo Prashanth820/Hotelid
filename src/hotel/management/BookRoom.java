@@ -16,8 +16,8 @@ public class BookRoom extends JFrame implements ActionListener {
     JRadioButton r1,r2;
 
     BookRoom(){
-        JLabel l1= new JLabel("WELCOME TO TAJ HOTEL");
-        l1.setBounds(100,20,300,30);
+        JLabel l1= new JLabel("WELCOME ");
+        l1.setBounds(170,20,300,30);
         l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Tahoma", Font.PLAIN, 20));
         add(l1);
@@ -31,11 +31,6 @@ public class BookRoom extends JFrame implements ActionListener {
         c1= new JComboBox( new String[]{"Passport","voter-id Card","Driving License", "Aadhar Card"});
         c1.setBounds(350,80,150,25);
         add(c1);
-
-
-
-
-
 
         JLabel l3= new JLabel("Number");
         l3.setBounds(35,120,100,20);
@@ -74,8 +69,6 @@ public class BookRoom extends JFrame implements ActionListener {
         add(r1);
 
 
-
-
         JLabel l6= new JLabel("Country");
         l6.setBounds(35,240,100,20);
         l6.setForeground(Color.WHITE);
@@ -99,7 +92,7 @@ public class BookRoom extends JFrame implements ActionListener {
             ResultSet rs = c.s.executeQuery(str);
             while(rs.next())
             {
-                c2.add(rs.getString("room"));
+                c2.add(rs.getString("room_number"));
 
             }
 
@@ -137,7 +130,7 @@ public class BookRoom extends JFrame implements ActionListener {
         b2.addActionListener(this);
         add(b2);
 
-        ImageIcon i10= new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/second.jpg"));
+        ImageIcon i10= new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/black.jpg"));
         Image i11 = i10.getImage().getScaledInstance(1000,600,Image.SCALE_DEFAULT);
         ImageIcon i12 =  new ImageIcon(i11);
         JLabel l12= new JLabel(i12);
@@ -161,7 +154,7 @@ public class BookRoom extends JFrame implements ActionListener {
         {
             String id = (String) c1.getSelectedItem();
             String number = t1.getText();
-            String name = t1.getText();
+            String name = t2.getText();
             String gender = null;
 
             if (r1.isSelected()) {
@@ -171,10 +164,10 @@ public class BookRoom extends JFrame implements ActionListener {
                 gender = "Female";
             }
 
-            String Country = t3.getText();
-            String room = c2.getSelectedItem();
+            String country = t3.getText();
+            String room_number = c2.getSelectedItem();
             String deposit = t5.getText();
-            String str = " insert into roombooks values('" + id + "','" + number + "','" + name + "','" + gender + "','" + room + "','" + deposit + "')";
+            String str = " insert into roombooks values('" + id + "','" + number + "','" + name + "','" + gender + "','" + country  + "','" + room_number+ "','" + deposit + "')";
 
             try {
                 conn c = new conn();

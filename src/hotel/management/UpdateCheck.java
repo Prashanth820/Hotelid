@@ -57,7 +57,7 @@ public class UpdateCheck extends JFrame {
     public UpdateCheck() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(500, 200, 950, 500);
+        setBounds(250, 100, 1100, 650);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -68,9 +68,9 @@ public class UpdateCheck extends JFrame {
         lblUpdateCheckStatus.setBounds(124, 11, 222, 25);
         contentPane.add(lblUpdateCheckStatus);
 
-        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/Image3.jpg"));
+        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/check-in.jpg"));
         JLabel l1 = new JLabel(i1);
-        l1.setBounds(450,70,476,270);
+        l1.setBounds(450,40,700,550);
         add(l1);
 
         JLabel lblNewLabel = new JLabel("ID:");
@@ -80,7 +80,7 @@ public class UpdateCheck extends JFrame {
         c1 = new Choice();
         try{
             conn c = new conn();
-            ResultSet rs = c.s.executeQuery("select * from customer");
+            ResultSet rs = c.s.executeQuery("select * from roombooks");
             while(rs.next()){
                 c1.add(rs.getString("number"));
             }
@@ -146,7 +146,7 @@ public class UpdateCheck extends JFrame {
                     String s4 = txt_Date.getText(); //status;
                     String s5 = txt_Time.getText(); //deposit
 
-                    c.s.executeUpdate("update customer set room_number = '"+s2+"', name = '"+s3+"', status = '"+s4+"', deposit = '"+s5+"' where number = '"+s1+"'");
+                    c.s.executeUpdate("update roombooks set room_number = '"+s2+"', name = '"+s3+"', status = '"+s4+"', deposit = '"+s5+"' where number = '"+s1+"'");
 
                     JOptionPane.showMessageDialog(null, "Data Updated Successfully");
                     new HotelReception().setVisible(true);
@@ -182,7 +182,7 @@ public class UpdateCheck extends JFrame {
                 try{
                     String s1 = c1.getSelectedItem();
                     conn c = new conn();
-                    ResultSet rs1 = c.s.executeQuery("select * from customer where number = "+s1);
+                    ResultSet rs1 = c.s.executeQuery("select * from roombooks where number = "+s1);
 
                     while(rs1.next()){
                         txt_ID.setText(rs1.getString("room_number"));

@@ -56,7 +56,7 @@ public class SearchRoom extends JFrame{
  public SearchRoom() throws SQLException {
   //conn = Javaconnect.getDBConnection();
   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  setBounds(530, 200, 700, 500);
+  setBounds(300, 130, 700, 500);
   contentPane = new JPanel();
   contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
   setContentPane(contentPane);
@@ -82,6 +82,8 @@ public class SearchRoom extends JFrame{
   JLabel lblPrice_1 = new JLabel("Price");
   lblPrice_1.setBounds(458, 162, 46, 14);
   contentPane.add(lblPrice_1);
+
+
 
   JLabel l1 = new JLabel("Bed Type");
   l1.setBounds(580, 162, 96, 14);

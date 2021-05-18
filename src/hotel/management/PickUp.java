@@ -57,7 +57,7 @@ public class PickUp extends JFrame{
     public PickUp() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(530, 200, 800, 600);
+        setBounds(280, 90, 800, 640);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

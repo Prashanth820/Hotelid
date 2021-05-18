@@ -54,17 +54,17 @@ import java.awt.event.ActionEvent;
     public Room() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(450, 200, 1100, 600);
+        setBounds(250, 130, 1000, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/second.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(600, 600,Image.SCALE_DEFAULT);
+        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/icons/twelve.jpg"));
+        Image i3 = i1.getImage().getScaledInstance(550, 500,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l1 = new JLabel(i2);
-        l1.setBounds(500,0,600,600);
+        l1.setBounds(500,20,550,500);
         add(l1);
 
 

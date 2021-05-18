@@ -14,14 +14,14 @@ public class HomePage extends JFrame  implements ActionListener {
 
     HomePage(){
 
-        JLabel l1= new JLabel("WELCOME TO TAJ HOTEL");
-        l1.setBounds(450,40,500,50);
+        JLabel l1= new JLabel("WELCOME ");
+        l1.setBounds(600,25,500,50);
         l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Tahoma", Font.PLAIN, 40));
         add(l1);
 
         JLabel l2= new JLabel("Select User Type");
-        l2.setBounds(525,200,300,40);
+        l2.setBounds(570,200,300,40);
         l2.setForeground(Color.WHITE);
         l2.setFont(new Font("Tahoma", Font.PLAIN, 30));
         add(l2);

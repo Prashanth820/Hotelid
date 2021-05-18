@@ -52,7 +52,7 @@ public class CustomerInfo extends JFrame{
     public CustomerInfo() throws SQLException {
         //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(530, 200, 900, 600);
+        setBounds(300, 130, 900, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -77,7 +77,7 @@ public class CustomerInfo extends JFrame{
                 try{
                     conn c  = new conn();
 
-                    String displayCustomersql = "select * from Customer";
+                    String displayCustomersql = "select * from roombooks";
                     ResultSet rs = c.s.executeQuery(displayCustomersql);
                     table.setModel(DbUtils.resultSetToTableModel(rs));
                 }
